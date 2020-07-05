@@ -17,6 +17,8 @@
 		66F8D70524B108F500F98477 /* SwiftPodcastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8D70424B108F500F98477 /* SwiftPodcastUITests.swift */; };
 		66F8D73824B1D8C100F98477 /* AddPodcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8D73724B1D8C100F98477 /* AddPodcastView.swift */; };
 		66F8D73A24B1D9B500F98477 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8D73924B1D9B500F98477 /* InitialView.swift */; };
+		66F8D74824B2206100F98477 /* PodcastListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8D74724B2206100F98477 /* PodcastListView.swift */; };
+		66F8D74A24B2872D00F98477 /* PodcastPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8D74924B2872D00F98477 /* PodcastPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		66F8D70624B108F500F98477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66F8D73724B1D8C100F98477 /* AddPodcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPodcastView.swift; sourceTree = "<group>"; };
 		66F8D73924B1D9B500F98477 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		66F8D74724B2206100F98477 /* PodcastListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListView.swift; sourceTree = "<group>"; };
+		66F8D74924B2872D00F98477 /* PodcastPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				66F8D72E24B1D70200F98477 /* Model */,
 				66F8D6E624B108F300F98477 /* ContentView.swift */,
 				66F8D73724B1D8C100F98477 /* AddPodcastView.swift */,
+				66F8D74724B2206100F98477 /* PodcastListView.swift */,
+				66F8D74924B2872D00F98477 /* PodcastPlayer.swift */,
 				66F8D73924B1D9B500F98477 /* InitialView.swift */,
 				66F8D6E824B108F500F98477 /* Assets.xcassets */,
 				66F8D6ED24B108F500F98477 /* LaunchScreen.storyboard */,
@@ -281,10 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F8D74A24B2872D00F98477 /* PodcastPlayer.swift in Sources */,
 				66F8D6E324B108F300F98477 /* AppDelegate.swift in Sources */,
 				66F8D6E524B108F300F98477 /* SceneDelegate.swift in Sources */,
 				66F8D73A24B1D9B500F98477 /* InitialView.swift in Sources */,
 				66F8D6E724B108F300F98477 /* ContentView.swift in Sources */,
+				66F8D74824B2206100F98477 /* PodcastListView.swift in Sources */,
 				66F8D73824B1D8C100F98477 /* AddPodcastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
