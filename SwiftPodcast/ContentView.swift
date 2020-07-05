@@ -6,6 +6,7 @@
 //  Copyright © 2020 groupedix. All rights reserved.
 //
 
+
 import SwiftUI
 
 struct SportType: Identifiable {
@@ -78,7 +79,7 @@ struct ContentView: View {
               .labelsHidden()
               .clipped()
             }
-            
+
             Section {
                 Button(action: {
                     print("Perform an action here...")
@@ -86,7 +87,7 @@ struct ContentView: View {
                     Text("Rechercher les podcasts")
                 }
             }
-            
+
         }
     }
 }
