@@ -20,6 +20,9 @@ struct Sport: Identifiable {
     var name: String
 }
 
+
+
+
 class Model: ObservableObject {
     let sportPodcast: [SportType] = [
         SportType(id: 0, name: "Individuel", sports: [
@@ -52,6 +55,8 @@ class Model: ObservableObject {
             sport.name
         }
     }
+    
+    
 }
 
 struct ContentView: View {
@@ -78,15 +83,23 @@ struct ContentView: View {
               .id(model.id)
               .labelsHidden()
               .clipped()
+        
+                
             }
-
+            
+            
+            NavigationLink(destination: PodcastListView()) {
+                Text("Do Something")
+            }
             Section {
+                
                 Button(action: {
                     print("Perform an action here...")
                 }) {
                     Text("Rechercher les podcasts")
                 }
             }
+            
 
         }
     }

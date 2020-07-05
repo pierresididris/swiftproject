@@ -10,14 +10,12 @@ import SwiftUI
 
 struct InitialView: View {
     var body: some View {
-        ContentView()
-//        TabView {
-//            Text("Ma commande")
-//                .tabItem {
-//                    Text("Order")
-//                    Image(systemName: "cart")
-//            }
-//        }
+        NavigationView {
+            ContentView()
+           NavigationLink(destination: PodcastListView()) {
+              Text("Press on me")
+           }.buttonStyle(PlainButtonStyle())
+        }
     }
 }
 
