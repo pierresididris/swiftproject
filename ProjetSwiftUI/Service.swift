@@ -9,7 +9,11 @@
 import Foundation
 
 struct Service{
-    static let listPodcasts: [ListElement] = [
+    
+    //["Physique", "Mental", "Vehicule", "Coordination", "Animaux"]
+    //["Collectif", "Individuel"]
+    
+    static let listPhysiqueCollectif: [ListElement] = [
         
         
         ListElement(icon: Constants.IconNames.icon1, image: Constants.ImageNames.image1, title: "The Bill Simmons Podcast", text: "HBO and The Ringer's Bill Simmons hosts the most downloaded sports podcast of all time, with a rotating crew of celebrities, athletes, and media staples, as well as mainstays like Cousin Sal, Joe House, and a slew of other friends and family members who always happen to be suspiciously available."),
@@ -20,6 +24,21 @@ struct Service{
         
     ]
     
+    
+    
+    static let listPhysiqueIndiv: [ListElement] = [];
+    
+    static let listMentalCollectif: [ListElement] = [];
+    static let listMentalIndiv: [ListElement] = [];
+    
+    static let listVehicCollectif: [ListElement] = [];
+    static let listVehicIndiv: [ListElement] = [];
+    
+    static let listCoordinCollectif: [ListElement] = []
+    static let listCoordinIndiv: [ListElement] = [];
+    
+    static let listAnimauxCollectif: [ListElement] = [];
+    static let listAnimauxIndiv: [ListElement] = [];
     
     
 }

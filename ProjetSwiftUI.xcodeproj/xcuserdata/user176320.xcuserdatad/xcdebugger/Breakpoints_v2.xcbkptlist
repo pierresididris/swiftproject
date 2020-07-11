@@ -14,10 +14,42 @@
             filePath = "ProjetSwiftUI/Service.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "listPodcasts"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "listPhysiqueCollectif"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "36D636D9-5E8B-4289-8F16-BDB153CA4DBE - e0d6570682daf62d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_F1DA7096AB2712F091D1275D9EF706D0_func0"
+                  moduleName = "ProjetSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user176320/Desktop/ProjetSwiftUI/ProjetSwiftUI/Service.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "36D636D9-5E8B-4289-8F16-BDB153CA4DBE - 44605d79c8ed8fff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProjetSwiftUI.Service.listPodcasts.unsafeMutableAddressor : Swift.Array&lt;ProjetSwiftUI.ListElement&gt;"
+                  moduleName = "ProjetSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user176320/Desktop/ProjetSwiftUI/ProjetSwiftUI/Service.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
