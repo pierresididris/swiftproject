@@ -11,16 +11,18 @@ import SwiftUI
 
 struct ImageOverlay: View {
     var body: some View {
-        ZStack{
-            HStack(alignment: .center){
-                Button(action: {
-                }) {
-                    Image(systemName: "play.fill")
-                        .font(.headline)
-                }.frame(width: 50.0, height: 50.0).foregroundColor(.blue).opacity(0.5)
+     
+        HStack{
+            Spacer()
+            Button(action: {
+            }) {
+                Image(systemName: "play.fill")
+                    .resizable()
+                    .frame(width: 100, height: 100).foregroundColor(.gray).opacity(0.9)
             }
-            
+            Spacer()
         }
+        
 
     }
 }
@@ -41,13 +43,11 @@ struct ListDetailView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                 }.frame(minWidth: 0, maxWidth: .infinity)
-                HStack{
-                    Image(item.image)
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fit)
-                    .overlay(ImageOverlay(), alignment: .leading)
-                }
+                Image(item.image)
+                .resizable()
+                .renderingMode(.original)
+                .aspectRatio(contentMode: .fit)
+                .overlay(ImageOverlay(), alignment: .leading)
                 Text(item.text)
                     .padding(.horizontal, 20)
             }

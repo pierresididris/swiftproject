@@ -13,8 +13,8 @@ struct ContentView:View {
     @State private var sportCategoryIndex = 0;
     var sportsCategories = ["Physique", "Mental", "Vehicule", "Coordination", "Animaux"];
     
-    @State private var sportCollIndvIndex = 0;
-    var sportsCollIndv = ["Collectif", "Individuel"];
+    @State private var formSportCollIndvIndex = 0;
+    var formSportsCollIndv = ["Collectif", "Individuel"];
 
     
     @State var firstname: String = ""
@@ -69,11 +69,13 @@ struct ContentView:View {
                                     Text(self.sportsCategories[$0]).tag($0)
                                 }
                             }.pickerStyle(DefaultPickerStyle())
-                            Picker(selection: $sportCollIndvIndex, label: Text("type")){
-                                ForEach(0 ..< sportsCollIndv.count){
-                                    Text(self.sportsCollIndv[$0]).tag($0)
-                                }
-                            }.pickerStyle(DefaultPickerStyle())
+                        }
+                        VStack{
+                            Picker(selection: $formSportCollIndvIndex, label: Text("type")){
+                                    ForEach(0 ..< formSportsCollIndv.count){
+                                        Text(self.formSportsCollIndv[$0]).tag($0)
+                                    }
+                                }.pickerStyle(DefaultPickerStyle())
                         }
                     }
                     Section(header: Text("image")){
@@ -257,17 +259,6 @@ struct PodcastsView: View {
         }.navigationBarTitle("Meilleurs Podcast")
         
         return b;
-        
-        
-        
-        
-        //            Button("Show Alert") {
-        //            self.showingAlert = true
-        //        }
-        //
-        //        .alert(isPresented: $showingAlert) {
-        //            Alert(title: Text(BoolToString(b: choiceCategorySport == "0")), message: Text(BoolToString(b: choiceCollectifIndiv == "1")), dismissButton: .default(Text("OK")))
-        //        }
         
     }
 }
