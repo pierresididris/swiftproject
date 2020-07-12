@@ -13,25 +13,15 @@ struct ImageOverlay: View {
     var body: some View {
         ZStack{
             HStack(alignment: .center){
-                NavigationLink(destination: PodcastPlayer()) {
-                    Button(action: {
-                    }) {
-                        Image(systemName: "play.fill")
-                            .font(.headline)
-                    }.frame(width: 50.0, height: 50.0).foregroundColor(.blue).opacity(0.5)
-                }
+                Button(action: {
+                }) {
+                    Image(systemName: "play.fill")
+                        .font(.headline)
+                }.frame(width: 50.0, height: 50.0).foregroundColor(.blue).opacity(0.5)
             }
             
         }
-//        ZStack {
-//            Text("Credit: Ricardo Gomez Angel")
-//                .font(.callout)
-//                .padding(6)
-//                .foregroundColor(.white)
-//        }.background(Color.black)
-//        .opacity(0.8)
-//        .cornerRadius(10.0)
-//        .padding(6)
+
     }
 }
 
