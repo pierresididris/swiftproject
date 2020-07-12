@@ -11,8 +11,11 @@ import SwiftUI
 struct ContentView:View {
 
     @State private var sportCategoryIndex = 0;
-
     var sportsCategories = ["Physique", "Mental", "Vehicule", "Coordination", "Animaux"];
+    
+    @State private var formSportCollIndvIndex = 0;
+    var formSportsCollIndv = ["Collectif", "Individuel"];
+
 
     @State var firstname: String = ""
     @State var lastname: String = ""
@@ -49,34 +52,56 @@ struct ContentView:View {
             NavigationView{
                 Form {
                    Section(header: Text("Autheur")) {
-                    TextField("Nom", text: $firstname)
-                    TextField("Prénom", text: $lastname)
-
+                       TextField("Nom", text: $firstname)
+                       TextField("Prénom", text: $lastname)
+                       
                    }
                    
-                   Section(header: Text("Podcast")) {
-//                    TextField("Description du podcast", text: $description)
-                    MultilineTextView(text: $description)
-                       ZStack {
-                        VStack(alignment: .center) {
-                               image?
-                                   .resizable()
-                                   .scaledToFit()
-                                   .frame(height: 150)
-                               Button(action: {
-                                   withAnimation {
-                                       self.isShowPicker.toggle()
+                   Section(header: Text("description")) {
+                        TextField("resumé", text: $description)
+//                       MultilineTextView(text: $description)
+                   }
+                   Section(header: Text("Categorie")){
+                       VStack{
+                           Picker(selection: $sportCategoryIndex, label: Text("Categrie")){
+                               ForEach(0 ..< sportsCategories.count){
+                                   Text(self.sportsCategories[$0]).tag($0)
+                               }
+                           }.pickerStyle(DefaultPickerStyle())
+                       }
+                       VStack{
+                           Picker(selection: $formSportCollIndvIndex, label: Text("type")){
+                                   ForEach(0 ..< formSportsCollIndv.count){
+                                       Text(self.formSportsCollIndv[$0]).tag($0)
                                    }
-                               }) {
-                                   Image(systemName: "photo")
-                                       .font(.headline)
-                                Text("importer").font(.headline).foregroundColor(Color.blue).multilineTextAlignment(.center).lineLimit(nil).padding()
-                               }.foregroundColor(.black)
-                               Spacer()
+                               }.pickerStyle(DefaultPickerStyle())
+                       }
+                   }
+                   Section(header: Text("image")){
+                       ZStack {
+                           HStack {
+                               VStack(alignment: .leading) {
+                                   image?
+                                       .resizable()
+                                       .scaledToFit()
+                                       .frame(height: 150)
+                                   
+                               }
+                               VStack(alignment: .leading){
+                                   Button(action: {
+                                       withAnimation {
+                                           self.isShowPicker.toggle()
+                                       }
+                                   }) {
+                                       Image(systemName: "plus.square")
+                                           .font(.headline)
+                                   }.foregroundColor(.blue)
+                               }
+                           }.sheet(isPresented: $isShowPicker) {
+                               ImagePicker(image: self.$image)
                            }
-                        }
-                       .sheet(isPresented: $isShowPicker) {
-                           ImagePicker(image: self.$image)
+                           
+                           
                        }
                    }
                    

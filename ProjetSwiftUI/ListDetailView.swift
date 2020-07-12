@@ -15,14 +15,23 @@ struct ListDetailView: View {
     
     
     
-    func showSafari(for url: String){
-        guard let url = URL(string:url) else{
-            //alert
-            return
+    struct ImageOverlay: View {
+        var podcasturl : String
+        var body: some View {
+            
+            HStack{
+                Spacer()
+                Button(action: {
+                    UIApplication.shared.open(URL(string: self.podcasturl)!, options: [:], completionHandler: nil)
+                }) {
+                    Image(systemName: "play.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100).foregroundColor(.gray).opacity(0.9)
+                }
+                Spacer()
+            }
+
         }
-        
-        let safariVC = SFSafariViewController(url: url)
-        safariVC.present(safariVC, animated: true);
     }
     
     var body: some View {
@@ -40,12 +49,7 @@ struct ListDetailView: View {
                     .resizable()
                     .renderingMode(.original)
                     .aspectRatio(contentMode: .fit)
-                
-                Button(action: {
-                    UIApplication.shared.open(URL(string: self.item.link)!, options: [:], completionHandler: nil)
-                }){
-                    Text("More Info >")
-                }
+                    .overlay(ImageOverlay(podcasturl : self.item.link), alignment: .leading)
                 
                 Text(item.text)
                     .padding(.horizontal, 20)
