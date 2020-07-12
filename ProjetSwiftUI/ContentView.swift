@@ -14,8 +14,18 @@ struct ContentView:View {
 
     var sportsCategories = ["Physique", "Mental", "Vehicule", "Coordination", "Animaux"];
 
+    @State var firstname: String = ""
+    @State var lastname: String = ""
+    @State var description: String = ""
+
+    
+    @State var isShowPicker: Bool = false
+    @State var image: Image? = Image("placeholder")
+
+    
     var body: some View {
 
+        TabView{
             NavigationView{
                     VStack{
                         Picker(selection: $sportCategoryIndex, label: Text("")){
@@ -28,12 +38,82 @@ struct ContentView:View {
                             Text("Next >")
                         }.padding(100)
                     }
-                    .navigationBarTitle("PodcastSuggester")
+                    .navigationBarTitle("Trouver votre podcast")
+                
+
+            }.tabItem {
+            Image(systemName: "doc.text.magnifyingglass")
+            Text("consulter")
+        }
+            NavigationView{
+                Form {
+                   Section(header: Text("Autheur")) {
+                    TextField("Nom", text: $firstname)
+                    TextField("Prénom", text: $lastname)
+
+                   }
+                   
+                   Section(header: Text("Podcast")) {
+//                    TextField("Description du podcast", text: $description)
+                    MultilineTextView(text: $description)
+                       ZStack {
+                        VStack(alignment: .center) {
+                               image?
+                                   .resizable()
+                                   .scaledToFit()
+                                   .frame(height: 150)
+                               Button(action: {
+                                   withAnimation {
+                                       self.isShowPicker.toggle()
+                                   }
+                               }) {
+                                   Image(systemName: "photo")
+                                       .font(.headline)
+                                Text("importer").font(.headline).foregroundColor(Color.blue).multilineTextAlignment(.center).lineLimit(nil).padding()
+                               }.foregroundColor(.black)
+                               Spacer()
+                           }
+                       }
+                       .sheet(isPresented: $isShowPicker) {
+                           ImagePicker(image: self.$image)
+                       }
+                   }
+                   
+                   Section {
+                       Button(action: {
+                           print("Perform an action here...")
+                       }) {
+                           Text("Partager le podcast")
+                       }
+                   }
+               }
+               .navigationBarTitle("Proposer un podcast")
+            }.tabItem {
+                    Text("Proposer")
+                    Image(systemName: "waveform.path.badge.plus")
             }
+        }
+        
+        
+    }
+    
 
+}
 
+struct MultilineTextView: UIViewRepresentable {
+    @Binding var text: String
+
+    func makeUIView(context: Context) -> UITextView {
+        let view = UITextView()
+        view.isScrollEnabled = true
+        view.isEditable = true
+        view.isUserInteractionEnabled = true
+        return view
     }
 
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.text = text
+    }
 }
 
 struct ResultView:View{
@@ -42,6 +122,7 @@ struct ResultView:View{
     @State private var sportCollIndvIndex = 0;
 
     var sportsCollIndv = ["Collectif", "Individuel"];
+
     
     var body: some View {
 
@@ -51,7 +132,7 @@ struct ResultView:View{
                             ForEach(0 ..< sportsCollIndv.count){
                                 Text(self.sportsCollIndv[$0]).tag($0)
                             }
-                        }.labelsHidden().frame(height: 60)
+                        }.labelsHidden().frame(height: 50.0)
                             .pickerStyle(SegmentedPickerStyle())
                             .scaledToFit()
                             .scaleEffect(CGSize(width: 1.5, height: 1.5))
@@ -59,7 +140,7 @@ struct ResultView:View{
                             Text("Next >")
                         }.padding(100)
                     }
-                    .navigationBarTitle("PodcastSuggester")
+                    .navigationBarTitle("Trouver votre podcast")
             
 
 
@@ -102,7 +183,7 @@ struct PodcastsView: View {
             
 
                 default:
-                    let b = 3;
+                    _ = 3;
             }
             
             
@@ -127,13 +208,13 @@ struct PodcastsView: View {
             
 
                 default:
-                    let b = 3;
+                    _ = 3;
             }
             
             break;
         default:
             //throw exception
-            let a = 4;
+            _ = 4;
         }
         
         return Service.listPhysiqueCollectif;
@@ -149,7 +230,7 @@ struct PodcastsView: View {
                 NavigationLink(destination: ListDetailView(item: item)) {
                     ListElementView(item: item)
                 }
-            }.navigationBarTitle("Best Podcasts")
+            }.navigationBarTitle("Meilleurs Podcast")
             
         return b;
             
@@ -166,6 +247,55 @@ struct PodcastsView: View {
         
     }
 }
+
+struct ImagePicker: UIViewControllerRepresentable {
+
+    @Environment(\.presentationMode)
+    var presentationMode
+
+    @Binding var image: Image?
+
+    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+        @Binding var presentationMode: PresentationMode
+        @Binding var image: Image?
+
+        init(presentationMode: Binding<PresentationMode>, image: Binding<Image?>) {
+            _presentationMode = presentationMode
+            _image = image
+        }
+
+        func imagePickerController(_ picker: UIImagePickerController,
+                                   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            image = Image(uiImage: uiImage)
+            presentationMode.dismiss()
+
+        }
+
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            presentationMode.dismiss()
+        }
+
+    }
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(presentationMode: presentationMode, image: $image)
+    }
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.delegate = context.coordinator
+        return picker
+    }
+
+    func updateUIViewController(_ uiViewController: UIImagePickerController,
+                                context: UIViewControllerRepresentableContext<ImagePicker>) {
+
+    }
+
+}
+
 
 
 struct ContentView_Previews: PreviewProvider {
