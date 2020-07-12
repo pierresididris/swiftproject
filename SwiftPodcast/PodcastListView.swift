@@ -21,7 +21,7 @@ let modelData: [Podcast] = [
     Podcast(image: "info.circle", PodcastName: "podcast de test", description: "Comment atteindre ses obljectif d'entrainement"),
     Podcast(image: "sun.max", PodcastName: "podcast de test", description: "Comment atteindre ses obljectif d'entrainement"),
     Podcast(image: "sun.max", PodcastName: "podcast de test", description: "Comment atteindre ses obljectif d'entrainement"),
-    Podcast(image: "info.circle", PodcastName: "podcast de test", description: "Comment atteindre ses obljectif d'entrainement")],
+    Podcast(image: "info.circle", PodcastName: "podcast de test", description: "Comment atteindre ses obljectif d'entrainement")];
 
 
 struct PodcastListView: View {
