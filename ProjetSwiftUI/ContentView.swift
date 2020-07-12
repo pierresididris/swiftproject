@@ -42,9 +42,10 @@ struct ContentView:View {
                 
 
             }.tabItem {
-            Image(systemName: "doc.text.magnifyingglass")
-            Text("consulter")
-        }
+                Image(systemName: "doc.text.magnifyingglass")
+                Text("Consulter")
+            }
+            
             NavigationView{
                 Form {
                    Section(header: Text("Autheur")) {
@@ -73,7 +74,7 @@ struct ContentView:View {
                                }.foregroundColor(.black)
                                Spacer()
                            }
-                       }
+                        }
                        .sheet(isPresented: $isShowPicker) {
                            ImagePicker(image: self.$image)
                        }
@@ -182,8 +183,8 @@ struct PodcastsView: View {
                     
             
 
-                default:
-                    _ = 3;
+            default:
+                _ = 3;
             }
             
             

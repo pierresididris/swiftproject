@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "36D636D9-5E8B-4289-8F16-BDB153CA4DBE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetSwiftUI/Service.swift"
@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "listPhysiqueCollectif"
-            landmarkType = "24">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "36D636D9-5E8B-4289-8F16-BDB153CA4DBE - e0d6570682daf62d"
@@ -30,26 +30,58 @@
                   urlString = "file:///Users/user176320/Desktop/ProjetSwiftUI/ProjetSwiftUI/Service.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
                   offsetFromSymbolStart = "68">
                </Location>
                <Location
-                  uuid = "36D636D9-5E8B-4289-8F16-BDB153CA4DBE - 44605d79c8ed8fff"
+                  uuid = "36D636D9-5E8B-4289-8F16-BDB153CA4DBE - 8823829f4794bde7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ProjetSwiftUI.Service.listPodcasts.unsafeMutableAddressor : Swift.Array&lt;ProjetSwiftUI.ListElement&gt;"
+                  symbolName = "ProjetSwiftUI.Service.listPhysiqueCollectif.unsafeMutableAddressor : Swift.Array&lt;ProjetSwiftUI.ListElement&gt;"
                   moduleName = "ProjetSwiftUI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user176320/Desktop/ProjetSwiftUI/ProjetSwiftUI/Service.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA697F5B-5E78-4AE1-8DE9-EACC7CF17F19"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetSwiftUI/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "test()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2083D4DA-31CE-4649-AEA4-148D693A9ECF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetSwiftUI/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "test()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

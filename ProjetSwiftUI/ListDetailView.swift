@@ -7,10 +7,23 @@
 //
 
 import SwiftUI
+import SafariServices
 
 struct ListDetailView: View {
     
     var item: ListElement
+    
+    
+    
+    func showSafari(for url: String){
+        guard let url = URL(string:url) else{
+            //alert
+            return
+        }
+        
+        let safariVC = SFSafariViewController(url: url)
+        safariVC.present(safariVC, animated: true);
+    }
     
     var body: some View {
         ScrollView {
@@ -28,6 +41,12 @@ struct ListDetailView: View {
                     .renderingMode(.original)
                     .aspectRatio(contentMode: .fit)
                 
+                Button(action: {
+                    UIApplication.shared.open(URL(string: self.item.link)!, options: [:], completionHandler: nil)
+                }){
+                    Text("More Info >")
+                }
+                
                 Text(item.text)
                     .padding(.horizontal, 20)
             }
@@ -37,6 +56,6 @@ struct ListDetailView: View {
 
 struct ListDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ListDetailView(item: ListElement(icon: "", image: "", title: "", text: ""))
+        ListDetailView(item: ListElement(icon: "", image: "", title: "", text: "", link:""))
     }
 }

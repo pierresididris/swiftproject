@@ -37,6 +37,6 @@ struct ListElementView: View {
 
 struct ListElementView_Previews: PreviewProvider {
     static var previews: some View {
-        ListElementView(item: ListElement(icon: "", image: "", title: "", text: ""))
+        ListElementView(item: ListElement(icon: "", image: "", title: "", text: "", link: ""))
     }
 }

@@ -14,4 +14,5 @@ struct ListElement: Identifiable {
     var image: String
     var title: String
     var text: String
+    var link: String
 }
